@@ -6,7 +6,7 @@
         <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html "
             target="_blank">
             <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-            <span class="ms-1 font-weight-bold">Soft UI Dashboard</span>
+            <span class="ms-1 font-weight-bold">DuniaIlmuSaya</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -16,6 +16,7 @@
                 <a class="nav-link  active" href="../pages/dashboard.html">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        {{-- todo area icon navbar --}}
                         <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>shop </title>
@@ -34,6 +35,7 @@
                                 </g>
                             </g>
                         </svg>
+                        {{-- todo area icon navbar --}}
                     </div>
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
