@@ -197,9 +197,16 @@
     </footer>
     <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
     <!--   Core JS Files   -->
+    @if (session('pesan'))
+        <script>
+            alert("{{ session('pesan') }}")
+        </script>
+    @endif
     <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js">
+        < /scrip> <
+        script src = "../assets/js/plugins/perfect-scrollbar.min.js" >
+    </script>
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script>
         var win = navigator.platform.indexOf('Win') > -1;

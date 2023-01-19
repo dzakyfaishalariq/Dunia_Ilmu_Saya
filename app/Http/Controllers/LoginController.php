@@ -16,7 +16,7 @@ class LoginController extends Controller
             'nama' => 'required|max:255',
             'email' => 'required|unique:users',
             'username' => 'required|max:255',
-            'password' => 'required',
+            'password' => 'required|min:6|max:50',
         ]);
         $data = $data_user->create([
             'nama' => $request->nama,
