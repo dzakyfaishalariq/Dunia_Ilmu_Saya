@@ -221,7 +221,6 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
-
                                     </div>
                                     {{-- <div class="form-check form-check-info text-left">
                                         <input class="form-check-input" type="checkbox" value=""

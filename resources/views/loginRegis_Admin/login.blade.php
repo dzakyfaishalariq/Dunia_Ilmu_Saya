@@ -107,13 +107,27 @@
                                         @csrf
                                         <label>UserName</label>
                                         <div class="mb-3">
-                                            <input type="text" class="form-control" placeholder="username"
-                                                aria-label="Email" name="username" aria-describedby="email-addon">
+                                            <input type="text"
+                                                class="form-control @error('username') is-invalid @enderror"
+                                                placeholder="UserName" aria-label="Name" name="username"
+                                                value="{{ old('username') }}" aria-describedby="email-addon">
+                                            @error('username')
+                                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                         <label>Password</label>
                                         <div class="mb-3">
-                                            <input type="password" class="form-control" placeholder="Password"
-                                                aria-label="Password" name="password" aria-describedby="password-addon">
+                                            <input type="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                placeholder="Password" aria-label="Password" name="password"
+                                                value="{{ old('password') }}" aria-describedby="password-addon">
+                                            @error('password')
+                                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign

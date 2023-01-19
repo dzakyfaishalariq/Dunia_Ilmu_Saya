@@ -35,7 +35,7 @@ class LoginController extends Controller
         // ! validasi untuk login
         $data_reques = $request->validate([
             'username' => 'required|max:255',
-            'password' => 'required',
+            'password' => 'required|min:6|max:50',
         ]);
         if (Auth::attempt($data_reques)) {
             $request->session()->regenerate();
