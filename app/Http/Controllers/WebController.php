@@ -31,6 +31,12 @@ class WebController extends Controller
         $title = "Buat_soal (Admin)";
         return view('areaAdmin.buat_soal', ['title' => $title]);
     }
+    public function buat_kategori_bidang()
+    {
+        // todo area buat soal
+        $title = "Kategori Bidang (Admin)";
+        return view('areaAdmin.buat_kategori_bidang', ['title' => $title]);
+    }
     // ! end area admin
 
     // ! area user

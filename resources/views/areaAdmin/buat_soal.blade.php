@@ -1,9 +1,9 @@
 @extends('template.main')
 @section('content')
-    <form action="/buat_soal_system" method="post">
-        <div class="row">
+    <div class="row">
+        <form action="/buat_soal_system" method="post">
             @csrf
-            <div class=" col-lg-8">
+            <div class=" col-lg-12">
                 <div class="card">
                     <div class=" card-body">
                         {{-- todo inputan judul --}}
@@ -112,9 +112,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class=" col-lg-4">
-                <div class="card">
+                <div class="card mt-4">
                     <div class="card-body">
                         <div class=" d-grid gap-2 mt-3">
                             <button type="submit" class="btn btn-success">SIMPAN</button>
@@ -122,25 +120,12 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
     <script>
         // decoupled-document
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-
-        ClassicEditor
-            .create(document.querySelector('#editor2'))
-            .catch(error => {
-                console.error(error);
-            });
-        ClassicEditor
-            .create(document.querySelector('#editor3'))
-            .catch(error => {
-                console.error(error);
-            });
+        CKEDITOR.replace('editor');
+        CKEDITOR.replace('editor2');
+        CKEDITOR.replace('editor3');
     </script>
 @endsection

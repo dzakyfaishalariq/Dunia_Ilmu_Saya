@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/home_Admin', 'homeAdmin');
         // todo membuka area buat soal
         Route::get('/buat_soal', 'buat_soal');
+        //todo membuka area buat kategori bidang soal
+        Route::get('/buat_kategori_bidang', 'buat_kategori_bidang');
     });
     Route::controller(LoginController::class)->group(function () {
         // todo keluar dari dashbord admin
