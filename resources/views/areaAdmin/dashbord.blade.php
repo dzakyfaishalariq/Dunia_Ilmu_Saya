@@ -133,6 +133,7 @@
                                         Aksi</th>
                                 </tr>
                             </thead>
+                            {{-- todo area tabel --}}
                             <tbody>
                                 <tr>
                                     <td>
@@ -181,6 +182,7 @@
                                     </td>
                                 </tr>
                             </tbody>
+                            {{-- todo end area tabel --}}
                         </table>
                     </div>
                 </div>

@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::controller(WebController::class)->group(function () {
         // todo membuka area dashbord admin
         Route::get('/home_Admin', 'homeAdmin');
+        // todo membuka area buat soal
+        Route::get('/buat_soal', 'buat_soal');
     });
     Route::controller(LoginController::class)->group(function () {
         // todo keluar dari dashbord admin
