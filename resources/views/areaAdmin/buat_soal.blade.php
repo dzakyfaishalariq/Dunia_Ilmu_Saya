@@ -13,13 +13,25 @@
                         </div>
                         {{-- todo inputan Kategori --}}
                         <div class=" mt-1">
+                            {{-- <h6>Kategori : </h6>
+                            <input type="text" class=" form-control" name="kategori" placeholder="Kategori"> --}}
                             <h6>Kategori : </h6>
-                            <input type="text" class=" form-control" name="kategori" placeholder="Kategori">
+                            <select class="form-select form-select-lg mb-3" name="kategori"
+                                aria-label=".form-select-lg example">
+                                <option selected disabled>Pilih Kategori</option>
+                                <option value="1">....</option>
+                            </select>
                         </div>
                         {{-- todo input bidang --}}
                         <div class=" mt-1">
+                            {{-- <h6>Bidang : </h6>
+                            <input type="text" class=" form-control" name="bidang" placeholder="Bidang"> --}}
                             <h6>Bidang : </h6>
-                            <input type="text" class=" form-control" name="bidang" placeholder="Bidang">
+                            <select class="form-select form-select-lg mb-3" name="bidang"
+                                aria-label=".form-select-lg example">
+                                <option selected disabled>Pilih Bidang</option>
+                                <option value="1">....</option>
+                            </select>
                         </div>
                         {{-- todo inputan Jenis --}}
                         <div class=" mt-1">

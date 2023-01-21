@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KategoriBidangController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
@@ -45,5 +46,9 @@ Route::middleware('auth')->group(function () {
     Route::controller(LoginController::class)->group(function () {
         // todo keluar dari dashbord admin
         Route::get('/logout_system', 'logout');
+    });
+    Route::controller(KategoriBidangController::class)->group(function () {
+        // todo area buat kategori
+        Route::post('/buat_kategori_system', 'buat_kategori');
     });
 });

@@ -4,12 +4,15 @@
         <div class=" col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="/buat_kategori" method="post">
+                    <form action="/buat_kategori_system" method="post">
                         @csrf
                         {{-- todo inputan Kategori --}}
                         <div class=" mt-1">
                             <h6>Kategori : </h6>
                             <input type="text" class=" form-control" name="kategori" placeholder="Kategori">
+                        </div>
+                        <div class=" mt-1">
+                            <input type="text" class=" form-control" name="k_kategori" placeholder="Keterangan">
                         </div>
                         {{-- todo tombol submit --}}
                         <div class="mt-1">
@@ -25,6 +28,9 @@
                         <div class=" mt-1">
                             <h6>Bidang : </h6>
                             <input type="text" class=" form-control" name="bidang" placeholder="Bidang">
+                        </div>
+                        <div class=" mt-1">
+                            <input type="text" class=" form-control" name="k_bidang" placeholder="Keterangan">
                         </div>
                         {{-- todo tombol submit --}}
                         <div class="mt-1">
