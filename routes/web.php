@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,6 +49,10 @@ Route::middleware('auth')->group(function () {
     });
     Route::controller(KategoriBidangController::class)->group(function () {
         // todo area buat kategori
-        Route::post('/buat_kategori_system', 'buat_kategori');
+    Route::post('/buat_kategori_system', 'buat_kategori');
+        // todo area edit kategori
+        Route::put('/edit_data_kategori/{kategori}', 'edit_data');
+        // todo area hapus kategori
+        Route::get('/hapus_kategori/{hapus}', 'hapus_data');
     });
 });

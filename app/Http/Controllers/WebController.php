@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Kategori;
 
 class WebController extends Controller
 {
@@ -35,7 +35,11 @@ class WebController extends Controller
     {
         // todo area buat soal
         $title = "Kategori Bidang (Admin)";
-        return view('areaAdmin.buat_kategori_bidang', ['title' => $title]);
+        $data_kategori = Kategori::all();
+        return view('areaAdmin.buat_kategori_bidang', [
+            'title' => $title,
+            'data_kategori' => $data_kategori,
+        ]);
     }
     // ! end area admin
 
