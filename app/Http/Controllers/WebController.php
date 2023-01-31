@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bidang;
 use App\Models\Kategori;
 
 class WebController extends Controller
@@ -29,16 +30,24 @@ class WebController extends Controller
     {
         // todo area buat soal
         $title = "Buat_soal (Admin)";
-        return view('areaAdmin.buat_soal', ['title' => $title]);
+        $data_kategori = Kategori::all();
+        $data_bidang = Bidang::all();
+        return view('areaAdmin.buat_soal', [
+            'title' => $title,
+            'data_kategori' => $data_kategori,
+            'data_bidang' => $data_bidang,
+        ]);
     }
     public function buat_kategori_bidang()
     {
         // todo area buat soal
         $title = "Kategori Bidang (Admin)";
-        $data_kategori = Kategori::all();
+        $data_kategori = Kategori::latest()->paginate(4);
+        $data_bidang = Bidang::latest()->paginate(4);
         return view('areaAdmin.buat_kategori_bidang', [
             'title' => $title,
             'data_kategori' => $data_kategori,
+            'data_bidang' => $data_bidang,
         ]);
     }
     // ! end area admin

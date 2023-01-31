@@ -48,11 +48,19 @@ Route::middleware('auth')->group(function () {
         Route::get('/logout_system', 'logout');
     });
     Route::controller(KategoriBidangController::class)->group(function () {
+        // ! area kategori manajemen
         // todo area buat kategori
-    Route::post('/buat_kategori_system', 'buat_kategori');
+        Route::post('/buat_kategori_system', 'buat_kategori');
         // todo area edit kategori
         Route::put('/edit_data_kategori/{kategori}', 'edit_data');
         // todo area hapus kategori
         Route::get('/hapus_kategori/{hapus}', 'hapus_data');
+        // ! area bidang manajemen
+        // todo buat area bidang
+        Route::post('/buat_bidang_system', 'buat_bidang');
+        // todo area edit kateogori
+        Route::put('/edit_data_bidang/{bidang}', 'edit_data_bidang');
+        // todo area hapus bidang
+        Route::get('/hapus_bidang/{bidang}', 'hapus_data_bidang');
     });
 });

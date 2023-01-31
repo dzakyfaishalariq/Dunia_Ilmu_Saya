@@ -19,7 +19,9 @@
                             <select class="form-select form-select-lg mb-3" name="kategori"
                                 aria-label=".form-select-lg example">
                                 <option selected disabled>Pilih Kategori</option>
-                                <option value="1">....</option>
+                                @foreach ($data_kategori as $kategori)
+                                    <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
+                                @endforeach
                             </select>
                         </div>
                         {{-- todo input bidang --}}
@@ -30,7 +32,9 @@
                             <select class="form-select form-select-lg mb-3" name="bidang"
                                 aria-label=".form-select-lg example">
                                 <option selected disabled>Pilih Bidang</option>
-                                <option value="1">....</option>
+                                @foreach ($data_bidang as $bidang)
+                                    <option value="{{ $bidang->id }}">{{ $bidang->nama_bidang }}</option>
+                                @endforeach
                             </select>
                         </div>
                         {{-- todo inputan Jenis --}}
