@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuatSoalController;
 use App\Http\Controllers\KategoriBidangController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WebController;
@@ -62,5 +63,13 @@ Route::middleware('auth')->group(function () {
         Route::put('/edit_data_bidang/{bidang}', 'edit_data_bidang');
         // todo area hapus bidang
         Route::get('/hapus_bidang/{bidang}', 'hapus_data_bidang');
+    });
+    Route::controller(BuatSoalController::class)->group(function () {
+        //!buat soal system
+        // todo buat soal
+        Route::post('/tess', 'buat_soal_system');
+        // Route::post('/tess', function () {
+        //     dd("hallo");
+        // });
     });
 });

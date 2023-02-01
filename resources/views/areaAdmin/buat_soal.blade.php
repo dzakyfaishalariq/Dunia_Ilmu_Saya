@@ -1,10 +1,11 @@
 @extends('template.main')
 @section('content')
     <div class="row">
-        <form action="/buat_soal_system" method="post">
+        <form action="/tess" method="post">
             @csrf
             <div class=" col-lg-12">
                 <div class="card">
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <div class=" card-body">
                         {{-- todo inputan judul --}}
                         <div class=" mt-1">
@@ -16,7 +17,7 @@
                             {{-- <h6>Kategori : </h6>
                             <input type="text" class=" form-control" name="kategori" placeholder="Kategori"> --}}
                             <h6>Kategori : </h6>
-                            <select class="form-select form-select-lg mb-3" name="kategori"
+                            <select class="form-select form-select-lg mb-3" name="kategori_id"
                                 aria-label=".form-select-lg example">
                                 <option selected disabled>Pilih Kategori</option>
                                 @foreach ($data_kategori as $kategori)
@@ -29,7 +30,7 @@
                             {{-- <h6>Bidang : </h6>
                             <input type="text" class=" form-control" name="bidang" placeholder="Bidang"> --}}
                             <h6>Bidang : </h6>
-                            <select class="form-select form-select-lg mb-3" name="bidang"
+                            <select class="form-select form-select-lg mb-3" name="bidang_id"
                                 aria-label=".form-select-lg example">
                                 <option selected disabled>Pilih Bidang</option>
                                 @foreach ($data_bidang as $bidang)
@@ -43,7 +44,7 @@
                             <div class="row">
                                 <div class=" col-md-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="jenis" value="sulit"
+                                        <input class="form-check-input" type="radio" name="Jenis_soal_id" value="1"
                                             id="jenis1">
                                         <label class="form-check-label" for="jenis1">
                                             Sulit
@@ -52,7 +53,7 @@
                                 </div>
                                 <div class=" col-md-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="jenis" value="Medium"
+                                        <input class="form-check-input" type="radio" name="Jenis_soal_id" value="2"
                                             id="jenis2">
                                         <label class="form-check-label" for="jenis2">
                                             Medium
@@ -61,7 +62,7 @@
                                 </div>
                                 <div class=" col-md-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="jenis" value="Mudah"
+                                        <input class="form-check-input" type="radio" name="Jenis_soal_id" value="3"
                                             id="jenis3">
                                         <label class="form-check-label" for="jenis3">
                                             Mudah
@@ -73,7 +74,7 @@
                         {{-- todo input keterangan soal --}}
                         <div class="mt-1">
                             <h6>Keterangan Soal : </h6>
-                            <textarea name="keterangan" class=" form-control" id="editor" cols="30" rows="10"></textarea>
+                            <textarea name="keterangan_soal" class=" form-control" id="editor" cols="30" rows="10"></textarea>
                         </div>
                         {{-- todo input soal --}}
                         <div class="mt-1">
@@ -87,31 +88,36 @@
                                 <div class=" col-lg-6">
                                     <div class=" mb-1">
                                         <label class=" form-label">A.</label>
-                                        <input type="text" class=" form-control" name="pilihan1" placeholder="Pilihan 1">
+                                        <input type="text" class=" form-control" name="pilihan_1"
+                                            placeholder="Pilihan 1">
                                     </div>
                                 </div>
                                 <div class=" col-lg-6">
                                     <div class=" mb-1">
                                         <label class=" form-label">B.</label>
-                                        <input type="text" class=" form-control" name="pilihan2" placeholder="Pilihan 2">
+                                        <input type="text" class=" form-control" name="pilihan_2"
+                                            placeholder="Pilihan 2">
                                     </div>
                                 </div>
                                 <div class=" col-lg-6">
                                     <div class=" mb-1">
                                         <label class=" form-label">C.</label>
-                                        <input type="text" class=" form-control" name="pilihan3" placeholder="Pilihan 3">
+                                        <input type="text" class=" form-control" name="pilihan_3"
+                                            placeholder="Pilihan 3">
                                     </div>
                                 </div>
                                 <div class=" col-lg-6">
                                     <div class=" mb-1">
                                         <label class=" form-label">D.</label>
-                                        <input type="text" class=" form-control" name="pilihan4" placeholder="Pilihan 4">
+                                        <input type="text" class=" form-control" name="pilihan_4"
+                                            placeholder="Pilihan 4">
                                     </div>
                                 </div>
                                 <div class=" col-lg-6">
                                     <div class=" mb-1">
                                         <label class=" form-label">E.</label>
-                                        <input type="text" class=" form-control" name="pilihan5" placeholder="Pilihan 5">
+                                        <input type="text" class=" form-control" name="pilihan_5"
+                                            placeholder="Pilihan 5">
                                     </div>
                                 </div>
                             </div>

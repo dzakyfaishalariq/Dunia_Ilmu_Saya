@@ -16,11 +16,12 @@ return new class extends Migration
         Schema::create('soals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('kategori_id');
-            $table->foreignId('bidang_id');
-            $table->foreignId('Jenis_soal_id');
+            $table->foreignId('kategori_id')->nullable();
+            $table->foreignId('bidang_id')->nullable();
+            $table->foreignId('Jenis_soal_id')->nullable();
+            $table->string('kode_soal', 10);
             $table->string('judul_soal');
-            $table->text('keterangan_soal');
+            $table->text('keterangan_soal')->nullable();
             $table->text('input_soal');
             $table->string('pilihan_1');
             $table->string('pilihan_2');
@@ -28,7 +29,7 @@ return new class extends Migration
             $table->string('pilihan_4');
             $table->string('pilihan_5');
             $table->string('jawaban');
-            $table->text('penjelasan_jawaban');
+            $table->text('penjelasan_jawaban')->nullable();
             $table->timestamps();
         });
     }
