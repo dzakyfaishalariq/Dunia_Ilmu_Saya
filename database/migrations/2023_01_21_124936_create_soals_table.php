@@ -18,8 +18,9 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('kategori_id')->nullable();
             $table->foreignId('bidang_id')->nullable();
-            $table->foreignId('Jenis_soal_id')->nullable();
+            $table->foreignId('jenis_soal_id')->nullable();
             $table->string('kode_soal', 10);
+            $table->string('gambar_karakter_soal');
             $table->string('judul_soal');
             $table->text('keterangan_soal')->nullable();
             $table->text('input_soal');

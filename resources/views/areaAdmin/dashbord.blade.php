@@ -120,14 +120,14 @@
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Judul Soal</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Jenis Soal</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Kategori Soal</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Tingkat Soal</th>
+                                        Tanggal dibuat</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Aksi</th>
@@ -135,52 +135,53 @@
                             </thead>
                             {{-- todo area tabel --}}
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-2 py-1">
-                                            <div>
-                                                <img src="../assets/img/small-logos/logo-atlassian.svg"
-                                                    class="avatar avatar-sm me-3" alt="atlassian">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Add Progress Track</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="avatar-group mt-2">
-                                            <a href="javascript:;" class="avatar avatar-xs rounded-circle"
-                                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                                                <img src="../assets/img/team-2.jpg" alt="team5">
-                                            </a>
-                                            <a href="javascript:;" class="avatar avatar-xs rounded-circle"
-                                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                                <img src="../assets/img/team-4.jpg" alt="team6">
-                                            </a>
-                                        </div>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <span class="text-xs font-weight-bold"> $3,000 </span>
-                                    </td>
-                                    <td class="align-middle">
-                                        <div class="progress-wrapper w-75 mx-auto">
-                                            <div class="progress-info">
-                                                <div class="progress-percentage">
-                                                    <span class="text-xs font-weight-bold">10%</span>
+                                @foreach ($data_soal as $soal)
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex px-2 py-1">
+                                                <div>
+                                                    <img src="{{ $soal->gambar_karakter_soal }}"
+                                                        class="avatar avatar-sm me-3" alt="atlassian">
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm">{{ $soal->judul_soal }}</h6>
                                                 </div>
                                             </div>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-gradient-info w-10" role="progressbar"
-                                                    aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </td>
+                                        <td>
+                                            <div class="mt-2">
+                                                <div class=" badge badge-sm bg-gradient-info ">
+                                                    {{ $soal->kategori->nama_kategori }}
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" class=" btn bg-gradient-info">Baca</a>
-                                        <a href="#" class=" btn btn-success">Ubah</a>
-                                        <a href="#" class=" btn btn-danger">Hapus</a>
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td>
+                                            <div class="mt-2">
+                                                @if ($soal->jenis_soal->jenis == 'Sulit')
+                                                    <div class="badge badge-sm bg-gradient-danger">
+                                                        {{ $soal->jenis_soal->jenis }}
+                                                    </div>
+                                                @elseif ($soal->jenis_soal->jenis == 'Medium')
+                                                    <div class="badge badge-sm bg-gradient-warning">
+                                                        {{ $soal->jenis_soal->jenis }}
+                                                    </div>
+                                                @elseif ($soal->jenis_soal->jenis == 'Mudah')
+                                                    <div class="badge badge-sm bg-gradient-info">
+                                                        {{ $soal->jenis_soal->jenis }}
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {{ $soal->created_at->format('d F Y') }}
+                                        </td>
+                                        <td>
+                                            <a href="#" class=" btn bg-gradient-info">Baca</a>
+                                            <a href="#" class=" btn btn-success">Ubah</a>
+                                            <a href="#" class=" btn btn-danger">Hapus</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                             {{-- todo end area tabel --}}
                         </table>

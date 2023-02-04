@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bidang;
 use App\Models\Kategori;
+use App\Models\Soal;
 
 class WebController extends Controller
 {
@@ -24,7 +25,8 @@ class WebController extends Controller
     {
         // todo area Home
         $title = "Home (Admin)";
-        return view('areaAdmin.dashbord', ['title' => $title]);
+        $data_soal = Soal::with('kategori', 'jenis_soal')->latest()->paginate(10);
+        return view('areaAdmin.dashbord', ['title' => $title, 'data_soal' => $data_soal]);
     }
     public function buat_soal()
     {
