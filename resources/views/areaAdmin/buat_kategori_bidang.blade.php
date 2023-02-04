@@ -64,7 +64,11 @@
                                 <tr>
                                     <td>
                                         <div class=" badge badge-sm bg-gradient-info">
-                                            {{ $loop->iteration }}
+                                            {{-- {{ $loop->iteration }} --}}
+                                            <div>
+                                                <img src="{{ $kategori->gambar }}" class="avatar avatar-sm"
+                                                    alt="{{ $kategori->nama_kategori }}">
+                                            </div>
                                         </div>
                                     </td>
                                     <td>
@@ -167,7 +171,10 @@
                                 <tr>
                                     <td>
                                         <div class=" badge badge-sm bg-gradient-warning">
-                                            {{ $loop->iteration }}
+                                            <div>
+                                                <img src="{{ $bidang->gambar }}" class="avatar avatar-sm"
+                                                    alt="{{ $bidang->nama_bidang }}">
+                                            </div>
                                         </div>
                                     </td>
                                     <td>

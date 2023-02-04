@@ -4,29 +4,33 @@
         {{-- todo area kategori --}}
         <hr class=" border-1 bg-dark">
         <h6 class=" text-dark">Kategori Soal</h6>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-            <div class="card">
-                <div class="card-body p-3">
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Matematika</p>
-                                <h5 class="font-weight-bolder mb-0">
-                                    1000
-                                    <span class="text-success text-sm font-weight-bolder">Soal</span>
-                                </h5>
+        @foreach ($data_kategori as $kategori)
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4 mt-4">
+                <div class="card">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-capitalize font-weight-bold">{{ $kategori->nama_kategori }}
+                                    </p>
+                                    <h5 class="font-weight-bolder mb-0">
+                                        {{ $kategori->soal->count() }}
+                                        <span class="text-success text-sm font-weight-bolder">Soal</span>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-4 text-end">
-                            <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                            <div class="col-4 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                                    {{-- <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i> --}}
+                                    <img src="{{ $kategori->gambar }}" class="avatar avatar-sm me-3" alt="atlassian">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        @endforeach
+        {{-- <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
             <div class="card">
                 <div class="card-body p-3">
                     <div class="row">
@@ -69,8 +73,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-sm-6">
+        </div> --}}
+        {{-- <div class="col-xl-3 col-sm-6">
             <div class="card">
                 <div class="card-body p-3">
                     <div class="row">
@@ -91,7 +95,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <hr class=" border-1 mt-4 bg-dark">
 
         {{-- todo end area kategori --}}

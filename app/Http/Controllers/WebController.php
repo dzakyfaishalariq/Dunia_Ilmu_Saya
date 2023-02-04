@@ -26,7 +26,8 @@ class WebController extends Controller
         // todo area Home
         $title = "Home (Admin)";
         $data_soal = Soal::with('kategori', 'jenis_soal')->latest()->paginate(10);
-        return view('areaAdmin.dashbord', ['title' => $title, 'data_soal' => $data_soal]);
+        $data_kategori = Kategori::with('soal')->latest()->get();
+        return view('areaAdmin.dashbord', ['title' => $title, 'data_soal' => $data_soal, 'data_kategori' => $data_kategori]);
     }
     public function buat_soal()
     {
